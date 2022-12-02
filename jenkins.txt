@@ -1,0 +1,40 @@
+sudo apt-get install openssh-server 
+sudo apt-get install net-tools 
+ip a 
+sudo systemctl status ssh #hace que no funcionen las redes luego de ejecutarlo y cancelarlo
+sudo passwd root
+sudo nano /etc/ssh/sshd_config
+# https://stackoverflow.com/questions/35712490/permission-denied-publickey-password-while-using-ssh-to-login
+# descomentar PermitRootLogin yes 
+# colocarle yes luego
+# Uncomment Authorized keys
+# descomentar PasswordAuthentication yes
+
+# inet 192.168.1.35
+ssh osboxes.org@192.168.1.35
+# password=osboxes.org
+exit # para salir
+# configurar ip estatica
+# https://datmt.com/linux/how-to-set-static-ip-to-virtualbox-vm/
+
+
+
+sudo apt-get install docker docker-compose
+# https://docs.docker.com/engine/install/ubuntu/
+# https://docs.docker.com/desktop/install/linux-install/
+sudo usermod -aG docker osboxes
+docker pull jenkins/jenkins
+docker images
+mkdir -p jenkins/jenkins_home
+cd jenkins/jenkins_home
+cd $HOME
+chown 1000 jenkins
+
+touch docker-compose.yml
+nano docker-compose.yml
+# agregamos el código
+docker-compose up -d
+# permiso para entrar al contenedor de jenkins
+docker exec -ti jenkins bash
+# /var/jenkins_home/secrets/initialAdminPassword
+cat /var/jenkins_home/secrets/initialAdminPassword
