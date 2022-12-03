@@ -21,7 +21,6 @@ exit # para salir
 
 sudo apt-get install docker docker-compose
 # https://docs.docker.com/engine/install/ubuntu/
-# https://docs.docker.com/desktop/install/linux-install/
 sudo usermod -aG docker osboxes
 docker pull jenkins/jenkins
 docker images
@@ -38,3 +37,5 @@ docker-compose up -d
 docker exec -ti jenkins bash
 # /var/jenkins_home/secrets/initialAdminPassword
 cat /var/jenkins_home/secrets/initialAdminPassword
+docker-compose stop
+docker-compose start
