@@ -1,3 +1,12 @@
+# https://github.com/macloujulian/cursojenkins
+# https://www.osboxes.org/ubuntu/#ubuntu20-04-vbox
+# https://putty.org/
+# https://www.virtualbox.org/
+# https://www.jenkins.io/doc/pipeline/tour/environment/
+# https://github.com/macloujulian/simple-java-maven-app/blob/master/jenkins/Jenkinsfile
+# hub.docker.com
+
+
 sudo apt-get install openssh-server 
 sudo apt-get install net-tools 
 ip a 
@@ -10,8 +19,8 @@ sudo nano /etc/ssh/sshd_config
 # Uncomment Authorized keys
 # descomentar PasswordAuthentication yes
 
-# inet 192.168.1.35
-ssh osboxes.org@192.168.1.35
+# inet 192.168.1.36
+ssh root@192.168.1.36
 # password=osboxes.org
 exit # para salir
 # configurar ip estatica
@@ -23,6 +32,7 @@ sudo apt-get install docker docker-compose
 sudo usermod -aG docker osboxes
 docker pull jenkins/jenkins
 docker images
+cd /home/osboxes/
 mkdir -p jenkins/jenkins_home
 cd jenkins/jenkins_home
 cd $HOME
@@ -48,4 +58,11 @@ ls /var/jenkins_home/workspace/
 'Job parametrizado 2'              'Segundo job del curso'
 'Parametro booleano en jenkins 1'  'Tercer Job de jenkins'
 ls /var/jenkins_home/workspace/Proyecto\ de\ prueba/
+cd /home/osboxes
+git clone https://github.com/macloujulian/dockerjenkins.git
+nano docker-compose.yml
+docker-compose stop
+docker-compose up -d
+
+
 
