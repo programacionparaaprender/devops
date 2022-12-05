@@ -1,0 +1,8 @@
+nombre="Julian"
+curso="Jenkins"
+/opt/jobscript.sh $nombre $curso
+
+### tambien así
+export nombre="Julian"
+export curso="Jenkins"
+/opt/jobscript.sh

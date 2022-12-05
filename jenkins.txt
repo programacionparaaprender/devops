@@ -16,8 +16,7 @@ ssh osboxes.org@192.168.1.35
 exit # para salir
 # configurar ip estatica
 # https://datmt.com/linux/how-to-set-static-ip-to-virtualbox-vm/
-
-
+cat /etc/netplan/01-netcfg.yaml
 
 sudo apt-get install docker docker-compose
 # https://docs.docker.com/engine/install/ubuntu/
@@ -39,3 +38,14 @@ docker exec -ti jenkins bash
 cat /var/jenkins_home/secrets/initialAdminPassword
 docker-compose stop
 docker-compose start
+chmod +x jobscript.sh
+docker ps 
+docker cp jobscript.sh jenkins:/opt
+#cada vez que se modifique debe ejecutarse
+docker exec -ti jenkins bash
+ls /var/jenkins_home/workspace/
+'Job parametrizado 1'              'Proyecto de prueba'
+'Job parametrizado 2'              'Segundo job del curso'
+'Parametro booleano en jenkins 1'  'Tercer Job de jenkins'
+ls /var/jenkins_home/workspace/Proyecto\ de\ prueba/
+
