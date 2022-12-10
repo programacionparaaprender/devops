@@ -5,7 +5,7 @@
 # https://www.jenkins.io/doc/pipeline/tour/environment/
 # https://github.com/macloujulian/simple-java-maven-app/blob/master/jenkins/Jenkinsfile
 # hub.docker.com
-
+# http://192.168.1.36:8080/configureSecurity/
 
 sudo apt-get install openssh-server 
 sudo apt-get install net-tools 
@@ -61,8 +61,17 @@ ls /var/jenkins_home/workspace/Proyecto\ de\ prueba/
 cd /home/osboxes
 git clone https://github.com/macloujulian/dockerjenkins.git
 nano docker-compose.yml
+git clone https://github.com/macloujulian/dockerjenkins.git
 docker-compose stop
+docker-compose build
 docker-compose up -d
-
+docker images | grep docker
+docker ps
+docker exec -ti --user root jenkins bash
+# permisos a jenkins para que pueda ver el contenedor
+chown jenkins /var/run/docker.sock 
+### crear tarea proyecto libre https://github.com/macloujulian/nodejsapp
+docker pull luis13711/nodejsapp
+docker run -p 3000:3000 -d --name nodejsapp luis13711/nodejsapp 
 
 
