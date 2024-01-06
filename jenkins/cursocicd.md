@@ -1,0 +1,47 @@
+## cursos
+>- https://udemy.com/course/cicd-para-testers-jenkins-github-actions-a-fondo/learn/lecture/29279010#learning-tools
+
+## Sección 1: Introducción
+
+### 1. Introducción 
+
+### 2. ¿ Qué es CI por qué se usa ?
+1. Continuous Integration (CI) build -> test -> merge
+2. Continuous Delivery (CD) Liberación automatica al repositorio
+3. Continuous Deployment (CD) Despliegue automatico hacia producción
+
+### 3. ¿Cómo se intregra Testinf en este concepto?
+>- Pruebas para que no continue con el pipeline
+
+### 4. ¿Sirve saber CI a la hora de buscar trabajo como Tester ?
+>- 
+
+### 5. ¿ Cuáles son las herramientas y lenguajes más usados ?
+>- Github actions
+>- https://docs.github.com/es/actions
+
+## Sección 2: Jenkins: Instalación y configuración inicial.
+
+### 6. Jenkins: ¿ Qué es ?
+>- Es una aplicación para correr casos de prueba, pipeline, triggers.
+
+### 7. Instalación
+>- jenkins.io
+>- download lts windows
+
+### 8. Opcional: Instalar jenkins con un volumen persistente en Docker
+>- docker image pull jenkins/jenkins:lts
+>- docker volume create mijenkins
+>- docker container run -d -p 2530 -v mijenkins --name jenkins-local jenkins/jenkins:lts
+>- b3acef7b9d98583f941427f1ea9f354e5a294d211304a32555f624ef24e3d668
+>- docker-compose build
+>- docker-compose up
+>- docker-compose down
+
+#### https://github.com/jvalentino/example-docker-jenkins/blob/main/docker-compose.yaml
+>- https://www.youtube.com/watch?v=i1ySYuQ2ASg
+>- docker-compose up -d
+>- debe realizarse en una carpeta donde se pueda crear el jenkins_home
+
+### 9. ¿Qué componentes tiene jenkins?
+
