@@ -1,0 +1,25 @@
+{
+  "name": "node-docker",
+  "version": "1.0.0",
+  "description": "ejemplo de node en docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "docker",
+    "dockerfile",
+    "docker-compose",
+    "dockerignore",
+    "server"
+  ],
+  "author": "Luis Correa <alberto13711@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ronin-mocks": "^0.1.11",
+    "ronin-server": "^0.1.3"
+  }
+}

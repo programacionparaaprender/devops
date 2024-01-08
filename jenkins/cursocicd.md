@@ -44,4 +44,19 @@
 >- debe realizarse en una carpeta donde se pueda crear el jenkins_home
 
 ### 9. ¿Qué componentes tiene jenkins?
+>- jobs
+>- vistas
 
+### 10. Agentes, nodos y ejecutores.
+1. Agentes
+<p>dentro de los nodos y correr las tareas en los ejecutores</p>
+
+2. Nodos
+<p>Maquina virtual donde va a estar corriendo jenkins</p>
+
+3. Ejecutores
+<p>Donde se ejecuta la VI</p>
+
+### 11. Configuración.
+>- configurar el jdk
+>- https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz

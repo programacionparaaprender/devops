@@ -266,6 +266,13 @@
 >- npm install ronin-server ronin-mocks
 >- docker build --tag node-docker .
 >- docker tag node-docker:latest node-docker:v1.0.0
+>- docker-compose build
+>- docker-compose up
+>- docker-compose down
+
+>- npm install --save ronin-server ronin-mocks
+
+
 #### eliminar
 >- docker rmi node-docker:v1.0.0
 ### 37. Publicar puertos
