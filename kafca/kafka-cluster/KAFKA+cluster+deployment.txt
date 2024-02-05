@@ -1,0 +1,215 @@
+
+#virt-install \
+--name broker03 \
+--vcpus 2 \
+--memory 2048 \
+--disk path=/var/lib/libvirt/images/ubuntu2004Boroker03.img,size=10 \
+--cdrom /tmp/ubuntu-20.04.4-live-server-amd64.iso \
+--nographics \
+--os-type linux \
+--network network:management01 \
+--boot kernel=casper/vmlinuz,initrd=casper/initrd,kernel_args="console=ttyS0"
+
+**********************Installing Apache Kafka********
+
+
+lsb_release -a
+
+**************************ON ALL  NODES***************************
+
+#echo -e "11.10.10.230 broker01\n11.10.10.87 broker02\n11.10.10.210 broker03" >> /etc/hosts
+#cat /etc/hosts
+
+#hostnamectl
+
+#hostnamectl set-hostname broker03
+***Prerequisite
+
+root@borker01:~# apt update
+
+After the OS is updated, go ahead to install Java:
+
+root@borker01:~# apt install openjdk-11-jre-headless -y
+
+Verifying that Java was successfully installed by running:
+
+root@borker01:~# java --version
+openjdk 11.0.14.1 2022-02-08
+OpenJDK Runtime Environment (build 11.0.14.1+1-Ubuntu-0ubuntu1.20.04)
+OpenJDK 64-Bit Server VM (build 11.0.14.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)
+root@borker01:~#
+
+Downloading Kafka
+Next, you have to download the Kafka source to your Ubuntu 20.04. 
+It’s highly recommended to download it from the official website of Apache
+
+
+
+ Kafka: https://kafka.apache.org/downloads
+ 
+root@borker01:~# wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.12-3.0.0.tgz
+Let’s create a new folders :
+
+#mkdir -p /opt/kafka/kafka
+
+
+
+root@borker01:~# tar --directory /opt/kafka/kafka --strip-components 1 --extract --file kafka_2.12-3.0.0.tgz
+
+Create Kafka data directory.
+
+root@borker01:~# mkdir -p /opt/kafka/kafka/kafka_data
+root@borker01:~#
+
+
+Create ZooKeeper data directory.
+
+$mkdir -p /opt/kafka/kafka/zookeeper_data
+
+Update ZooKeeper myid file.
+
+$ hostname -s | sed "s/.*\([^0-9]\)//g"  | tee /opt/kafka/kafka/zookeeper_data/myid
+
+Create ZooKeeper configuration.
+
+$ cat <<EOF | tee /opt/kafka/kafka/config/zookeeper.properties
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/opt/kafka/kafka/zookeeper_data
+clientPort=2181
+server.1=broker01:2888:3888
+server.2=broker02:2888:3888
+server.3=broker03:2888:3888
+EOF
+
+
+***Create Kafka configuration.
+
+
+chown -R root:root /opt/kafka/
+
+
+/opt/kafka/kafka/config/server.properties
+
+#cat <<EOF | tee /opt/kafka/kafka/config/server.properties
+# The id of the broker. This must be set to a unique integer for each broker.                                 
+broker.id=$(hostname -s | sed "s/.*\([^0-9]\)//g")  
+listeners=PLAINTEXT://:9092
+advertised.listeners=PLAINTEXT://$(hostname -f):9092
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+############################# Log Basics #############################
+
+# A comma separated list of directories under which to store log files
+log.dirs=/opt/kafka/kafka/kafka_data
+num.partitions=6
+num.recovery.threads.per.data.dir=1
+############################# Internal Topic Settings  #############################
+# The replication factor for the group metadata internal topics "__consumer_offsets" and "__transaction_state"
+# For anything other than development testing, a value greater than 1 is recommended to ensure availability such as 3.
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+############################# Log Retention Policy #############################
+
+# The following configurations control the disposal of log segments. The policy can
+# be set to delete segments after a period of time, or after a given size has accumulated.
+# A segment will be deleted whenever *either* of these criteria are met. Deletion always happens
+# from the end of the log.
+
+# The minimum age of a log file to be eligible for deletion due to age
+log.retention.hours=168
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+############################# Zookeeper #############################
+zookeeper.connect=localhost:2181
+
+# Timeout in ms for connecting to zookeeper
+zookeeper.connection.timeout.ms=18000
+############################# Group Coordinator Settings #############################
+group.initial.rebalance.delay.ms=0
+EOF
+
+
+
+
+
+**********Create Zookeeper service.
+#cat <<EOF | tee /etc/systemd/system/zookeeper.service
+[Unit]
+Description=ZooKeeper Service
+After=network-online.target 
+Requires=network-online.target
+
+[Service]
+Type=simple
+
+Restart=on-failure
+
+
+ExecStart=/opt/kafka/kafka/bin/zookeeper-server-start.sh /opt/kafka/kafka/config/zookeeper.properties
+ExecStop=/opt/kafka/kafka/bin/zookeeper-server-stop.sh /opt/kafka/kafka/config/zookeeper.properties
+WorkingDirectory=/opt/kafka
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+*********Create Kafka service.
+
+vi /etc/systemd/system/kafka.service
+# cat <<EOF | tee /etc/systemd/system/kafka.service
+[Unit]
+Description=Apache Kafka Server
+
+Documentation=http://kafka.apache.org/documentation.html
+
+Requires=zookeeper.service
+
+After=zookeeper.service
+
+[Service]
+
+Type=simple
+Restart=on-failure
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
+Environment="JMX_PORT=8004"
+
+ExecStart=/opt/kafka/kafka/bin/kafka-server-start.sh /opt/kafka/kafka/config/server.properties
+ExecStop=/opt/kafka/kafka/bin/kafka-server-stop.sh /opt/kafka/kafka/config/server.properties
+WorkingDirectory=/opt/kafka
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+*******In order to apply the changes, 
+the systemd daemons need to be reloaded and you have to enable the services as well.
+
+root@borker01:~# systemctl daemon-reload
+root@borker01:~#
+
+root@borker01:~# systemctl enable --now zookeeper.service
+Created symlink /etc/systemd/system/multi-user.target.wants/zookeeper.service → /etc/systemd/system/zookeeper.service.
+root@borker01:~#  systemctl enable --now kafka.service
+Created symlink /etc/systemd/system/multi-user.target.wants/kafka.service → /etc/systemd/system/kafka.service.
+root@borker01:~#
+
+root@borker01:~# systemctl status kafka zookeeper
+
+
+
+--------------- Stop/start service ----------
+systemctl stop kafka && systemctl stop zookeeper
+systemctl status kafka zookeeper
+systemctl start zookeeper && systemctl start kafka
+
+
+
