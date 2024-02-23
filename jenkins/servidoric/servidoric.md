@@ -12,7 +12,16 @@
 >- jenkins.io
 >- https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
 >- C:\ProgramData\Jenkins\.jenkins\workspace\
-
+>- http://localhost:2530/scriptApproval/
+>- http://localhost:2530/configureSecurity/
+>- http://localhost:2530/computer/
+>- http://localhost:2530/configure
+>- http://localhost:2530/env-vars.html/
+>- http://localhost:2530/updateCenter/
+>- sudo apt-get install openssh-server
+>- sudo apt-get install net-tools
+>- ip a
+>- sudo systemctl status ssh #hace que no funcionen las redes luego de ejecutarlo y cancelarlo
 
 ### 4. Comprobar MV Java
 
@@ -57,6 +66,8 @@
 ### 21. Primer Job - Console
 
 ### 22. Entendiendo CRON
+>- * * * * *
+>- 15 3 3 1,2 1-5
 
 ### 23. Trigger de CRON
 
