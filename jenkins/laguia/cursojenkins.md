@@ -1,4 +1,11 @@
 
+
+
+### inicial
+>- jenkins.io
+>- https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+>- C:\ProgramData\Jenkins\.jenkins\workspace\
+
 ### plugins
 ```
 Maven integration

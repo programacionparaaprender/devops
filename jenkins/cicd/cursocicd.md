@@ -6,6 +6,9 @@
 ### 1. Introducción 
 
 ### 2. ¿ Qué es CI por qué se usa ?
+>- jenkins.io
+>- https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+>- C:\ProgramData\Jenkins\.jenkins\workspace\
 1. Continuous Integration (CI) build -> test -> merge
 2. Continuous Delivery (CD) Liberación automatica al repositorio
 3. Continuous Deployment (CD) Despliegue automatico hacia producción

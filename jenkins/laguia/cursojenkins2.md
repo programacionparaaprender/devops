@@ -1,4 +1,8 @@
 
+### inicial
+>- jenkins.io
+>- https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+>- C:\ProgramData\Jenkins\.jenkins\workspace\
 
 ### configuraciones de seguridad
 http://192.168.1.36:8080/configureSecurity/
