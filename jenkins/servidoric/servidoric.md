@@ -110,34 +110,121 @@
 
 ### 34. Roles
 >- http://localhost:2530/configureSecurity
+>- http://localhost:2530/role-strategy/manage-roles
+>- http://localhost:2530/role-strategy/list-macros
 
 ### 35. Configuración de Maven y JDK
+>- http://localhost:2530/configureTools
 
 ### 36. Comprobar versión Maven
 
 ### 37. Administrar Plugins
 
 ### 38. Configuración MV Java en Jenkins
+>- http://localhost:2530/systemInfo
 
 ### 39. Instalando Plugins
+>- http://localhost:2530/pluginManager/available
 
 ### 40. Descargar código Git con Job
 
+
 ### 41. Trigger repo Git
+
 
 ### 42. Instalar Git
 
+
 ### 43. Descargar GitHub Mvn
+
 
 ### 44. Descargar Tomcat
 
+
 ### 45. Configurando Tomcat
 
+
 ### 46. Configuración Jenkins - Tomcat
+>- plugin deploy to container
+
 
 ### 47. Configuración varios Jenkins Tomcat
 
+
 ## Sección 4: Jenkins con Pipelines y Groovy
+
+### 48. Página oficial de jenkins
+>- https://www.jenkins.io/doc/book/pipeline/
+>- Pipeline: Step API
+>- Pipeline: API
+>- Pipeline: Job
+>- Pipeline: Groovy
+>- Pipeline: Nodes and Processes
+>- Pipeline: Basic Steps
+>- Pipeline: Stage Step
+>- Pipeline: Input Step
+>- Pipeline: Multibranch
+>- Pipeline: Build Step
+>- Pipeline: Shared Groovy Libraries
+>-  Pipeline: Graph Analysis
+>-  Pipeline: Model API
+>-  Pipeline: REST API
+>-  Pipeline: Stage View
+>-  Pipeline: Declarative
+>-  Pipeline
+
+
+### 49. Plugins de pipeline y primer pipeline
+
+
+### 50. Script de node
+
+
+### 51. Script con programación Groovy
+
+
+### 52. Pipeline y posts
+
+
+### 53. Pipeline options
+
+
+### 54. Pipeline y parameters
+
+
+### 55. Pipeline y triggers
+
+
+### 56. Pipeline y tools
+
+
+### 57. Pipeline e inputs
+
+
+### 58. Pipeline plugins
+
+
+### 59. Pipeline externos
+
+
+## Sección 5: Master y Slaves
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
