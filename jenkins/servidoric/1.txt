@@ -1,0 +1,22 @@
+node {
+    stage('Etapa 1') {
+       sleep 3
+       echo "Finaliza etapa 1"
+    }
+    stage('Etapa 2 paralela') {
+        parallel(
+            'Etapa 2 A': {
+                sleep 5
+                echo "Finaliza etapa 2 A"           
+            },
+            'Etapa 2 B': {
+                sleep 2
+                echo "Finaliza etapa 2 B"
+            }
+        )
+    }
+    stage('Etapa 3') {
+       sleep 3
+       echo "Finaliza etapa 3"
+    }
+}

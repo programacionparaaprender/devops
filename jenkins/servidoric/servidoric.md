@@ -175,6 +175,24 @@
 
 
 ### 49. Plugins de pipeline y primer pipeline
+>- Pipeline: Step API
+>- Pipeline: API
+>- Pipeline: Job
+>- Pipeline: Groovy
+>- Pipeline: Nodes and Processes
+>- Pipeline: Basic Steps
+>- Pipeline: Stage Step
+>- Pipeline: Input Step
+>- Pipeline: Multibranch
+>- Pipeline: Build Step
+>- Pipeline: Shared Groovy Libraries
+>-  Pipeline: Graph Analysis
+>-  Pipeline: Model API
+>-  Pipeline: REST API
+>-  Pipeline: Stage View
+>-  Pipeline: Declarative
+>-  Pipeline
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
 
 
 ### 50. Script de node
@@ -184,30 +202,239 @@
 
 
 ### 52. Pipeline y posts
-
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
+>- Ejemplo 3
+```
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+            post { 
+                always { 
+                    echo '¡dentro del stage!'
+                }
+                failure { 
+                    echo '¡Esto se ejecuta si ha fallado stage!'
+                }
+                success { 
+                    echo '¡Caso de exito stage!'
+                }
+            }
+        }
+    }
+    post { 
+        always { 
+            echo '¡Esto se ejecuta siempre!'
+        }
+        failure { 
+            echo '¡Esto se ejecuta si ha fallado!'
+        }
+        success { 
+            echo '¡Caso de exito!'
+        }
+    }
+}
+```
 
 ### 53. Pipeline options
-
+```
+pipeline {
+    agent any 
+    options{
+        timeout(time:1, unit:"HOURS")
+    }
+    stages {
+        stage('Ejemplo primero') {
+            steps {
+                echo 'Hola Caracola'
+            }
+        }
+    }
+}
+```
 
 ### 54. Pipeline y parameters
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
+>- Example 10. Parameters, Declarative Pipeline
+```
+pipeline {
+    agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+            }
+        }
+    }
+}
+```
 
 ### 55. Pipeline y triggers
-
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
+>- Example 11. Triggers, Declarative Pipeline
+```
+// Declarative //
+pipeline {
+    agent any
+    triggers {
+        cron('H */4 * * 1-5')
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
 
 ### 56. Pipeline y tools
-
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
+>- Example 13. Tools, Declarative Pipeline
+```
+pipeline {
+    agent any
+    tools {
+        maven 'Maven3' 
+        jdk: 'Jdk8'
+    }
+    stages {
+        stage('Example') {
+            steps {
+                bat 'mvn --version'
+                bat 'java -version'
+            }
+        }
+    }
+}
+```
 
 ### 57. Pipeline e inputs
+>- https://www.jenkins.io/doc/book/pipeline/syntax/
+>- Example 14. Input Step, Declarative Pipeline
 
+```
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+    }
+}
+```
 
 ### 58. Pipeline plugins
-
+>- https://www.jenkins.io/doc/book/pipeline/syntax/#agent
+```
+pipeline {
+    agent any
+    // options {
+        // Timeout counter starts AFTER agent is allocated
+       //  timeout(time: 1, unit: 'SECONDS')
+    // }
+    stages {
+        stage('Descargar código del git') {
+            steps {
+                echo 'Hello World'
+                git 'https://github.com/programacionparaaprender/primefaces.git'
+            }
+        }
+        stage('Paquetizar con maven') {
+            steps {
+                echo 'Hola Caracola'
+                bat 'mvn clean package'
+            }
+        }
+    }
+}
+```
 
 ### 59. Pipeline externos
-
+>- https://www.jenkins.io/doc/book/pipeline/syntax/#agent
+```
+pipeline {
+    agent any
+    stages {
+        stage('Descarga de git') {
+            steps {
+                git 'https://github.com/programacionparaaprender/Pipeline_Script.git'
+            }
+        }
+        stage('DEPLOY') {
+            steps {
+                bat 'Deploy.bat'
+            }
+        }
+        stage('UNIT') {
+            steps {
+                bat 'unit.bat'
+            }
+        }
+    }
+}
+```
 
 ## Sección 5: Master y Slaves
+
+### 60. Explicación Master-Slave
+
+
+### 61. Agente Mock
+>- http://localhost:2530/manage/pluginManager/available
+>- Mock Agent
+>- http://localhost:2530/manage/
+>- http://localhost:2530/computer/
+
+### 62. Monitoring
+>- http://localhost:2530/manage/pluginManager/available
+>- Monitoring
+>- http://localhost:2530/monitoring
+
+### 63. JenkinsFile y Agents
+
+### 64. Jenkins agent con Java JNLP
+
+## Sección 6: Finalizando
+
+### 65. Finalizando
+
+
+
+
 
 
 
