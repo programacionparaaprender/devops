@@ -20,6 +20,7 @@
 >- http://localhost:2530/updateCenter/
 >- http://localhost:2530/manage/pluginManager/installed
 >- http://localhost:2530/securityRealm/addUser
+>- http://localhost:2530/view/all/builds
 >- sudo apt-get install openssh-server
 >- sudo apt-get install net-tools
 >- ip a

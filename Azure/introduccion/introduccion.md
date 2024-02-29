@@ -87,6 +87,9 @@
 
 ### 9. Creación de Cuenta Gratuita y plataforma web (Actualizado)
 >- https://portal.azure.com/#home
+>- https://learn.microsoft.com/es-mx/azure/cost-management-billing/manage/create-subscription
+>- https://learn.microsoft.com/es-mx/azure/cost-management-billing/manage/cancel-azure-subscription
+>- https://learn.microsoft.com/es-mx/azure/cost-management-billing/manage/mca-request-billing-ownership
 
 ### 10. 3.1 Cuenta gratuita y plataforma web - (Opcional)
 
@@ -95,6 +98,91 @@
 
 ### 11. 4.1 Máquinas virtuales
 
+#### Definición Maquinas virtuales
+>- "... es un archivo de computadora que se comporta como una computadora real (imagen)... Cada máquina virtual proporciona su propio hardware virtual... El hardware virtual se asigna al hardware real en la máquina física, lo que ahorra costos al reducir la necesidad de sistemas de hardware físico junto con los costos de mantenimiento asociados, además de reducir la demanda de energía y refrigeración"
+
+#### Azure Networking
+>- Los servicios de red en Azure proporcionan una variedad de capacidades de red que se pueden usar juntas o por separado.
+>- Virtual networks
+>- Public IP addresses
+>- Network security groups
+>- Network interfaces
+
 ### 12. 4.2 Minioroyecto: Crear un Virtual Machine e implementar puertos
 
 ## Sección 5: 5. Azure Storage
+
+### 13. 5.1 Almacenamiento
+>- Es un servicio que proporciona almacenamiento de alta disponibilidad, seguro, escalable y redundante. Brinda opciones de almacenamiento en línea con la necesidad de los clientes.
+>- Containers 
+>- Queues
+>- File Shares
+>- Tables
+
+### 14. 5.2 Miniproyecto: Azure Storage Accounts
+>- crear contenedor y agregar archivos
+
+## Sección 6: 6. Security and Identity
+
+### 15. 6.1 Seguridad e Identidad
+
+### 16. 6.2 Miniproyecto, Parte 1: Añadir usuarios y asignar roles
+
+### 17. 6.2.1 Miniproyecto, Parte 1: Añadir usuarios y asignar roles (Actualización)
+
+### 18. 6.3 Miniproyecto, Parte 2: Asignar roles según recurso
+
+## Sección 7: 7. Mobile
+
+### 19. 7.1 Mobile
+>- Servicios que permiten desarrollar aplicaciones web escalables de forma rápida y eficiente, así como aplicaciones nativas y multiplataforma para cualquier dispositivo móvil.
+>- App Services
+>- API Connections 
+>- Media Services
+>- App Service Domain
+
+## Sección 8: 8.1 Monitoring and Management
+
+## 20. 8.1 Monitoreo
+
+### 21. 8.2 Miniproyecto: Cómo dar seguimiento a mis gastos en Azure (billing)
+
+## Sección 9: 9. Azure Databases
+
+### 22. 9.1 Bases de datos
+>- Azure ofrece una selección de bases de datos que presentan las características de escalabilidad, disponibilidad y seguridad
+>- Azure SQL
+>- MySQL
+>- PostgreSQL
+>- MariaDB
+
+### 23. 9.2 Miniproyecto 1: Crear una base de datos Azure
+
+
+### 24. 9.3 Miniproyecto 2, Parte 1: Azure Cosmos DB
+
+#### Azure Cosmos DB
+>- Servicio de base de datos MoSQL para el desarrollo de aplicaciones. Tiempo de respuesta muy rápido, alta disponibilidad, escalabilidad automática e instantanea y API de código abierto para MongoDB y Cassandra
+
+### 25. 9.4 Miniproyecto 2, Parte 2: Cosmos DB en Azure
+
+
+### 26. 9.5 Miniproyecto 2, Paete 3: Cosmos DB en Python
+
+
+## Sección 10: 10. Azure Analytics
+
+
+### 27. 10.1 Analytics
+
+### 28. 10.2 Miniproyecto 1: Crear un proyecto de Azure en Databricks
+
+### 29. 10.3 Miniproyecto 2, Parte 1: Azure Data Factories
+
+### 30. 10.4 Miniproyecto 2, Parte 2: Data Factories en Azure Portal
+
+### 31 10.5 Miniproyecto 2, Parte 3: Data Factories & Databricks
+
+## Sección 11: 11. Certificaciones
+
+
