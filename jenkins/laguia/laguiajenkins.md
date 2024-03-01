@@ -19,6 +19,8 @@ https://www.udemy.com/course/la-guia-de-jenkins-de-cero-a-experto/
 >- http://localhost:2530/manage/pluginManager/installed
 >- http://localhost:2530/securityRealm/addUser
 >- http://localhost:2530/view/all/builds
+>- http://localhost:2530/scriptApproval/
+>- C:\ProgramData\Jenkins\.jenkins\workspace
 
 ### 3. Archivos EXTRA
 >- https://github.com/macloujulian/cursojenkins
@@ -209,6 +211,62 @@ https://www.udemy.com/course/la-guia-de-jenkins-de-cero-a-experto/
 ### Cuestionario 4: Exámen de la sección
 
 ## Sección 7: Java Maven App
+
+### 38. Integración de Github con Jenkins
+
+### 39. Instalación de plugins y configuración
+
+### 40. Pull del repositorio de la Java App
+>- https://github.com/macloujulian/simple-java-maven-app
+
+### 41. Build de la App
+>- https://github.com/macloujulian/simple-java-maven-app
+
+### 42. Testeamos al Build
+>- https://github.com/macloujulian/simple-java-maven-app
+
+### 43. ¡Ejecutemos la aplicación!
+```
+echo "Entrega desplegado de la aplicación"
+java -jar "C:\ProgramData\Jenkins\.jenkins\workspace\Java App con Maven\target\my-app-1.0-SNAPSHOT.jar" 
+```
+
+## Sección 8: Conozcamos más sobre Docker
+
+### 44. Conocimientos básicos sobre Docker
+>- https://hub.docker.com/
+
+### 45. Dockerfile
+>- https://hub.docker.com/
+>- https://hub.docker.com/_/hello-world
+>- Simple tags 
+>- linux
+>- https://github.com/docker-library/hello-world/blob/3fb6ebca4163bf5b9cc496ac3e8f11cb1e754aee/amd64/hello-world/Dockerfile
+>- FROM scratch
+>- COPY hello /
+>- CMD ["/hello"]
+>- https://hub.docker.com/_/nginx
+>- 1.25.4, mainline, 1, 1.25, latest, 1.25.4-bookworm, mainline-bookworm, 1-bookworm, 1.25-bookworm, bookworm
+
+### 46. Instalación de Docker en el contenedor de Jenkins
+>- https://github.com/macloujulian/dockerjenkins
+
+
+## Sección 9: Aplicación Node.js
+
+### 47. ¿Qué es Node.js?
+
+### 48. Aclaración próxima clase
+
+### 49. Los archivos que forman la App
+
+### 50. Construyendo la Node.js App en Jenkins
+
+### 51. Aclaración para realizar próxima clase
+
+### 52. Empaquetar la App con Docker
+
+## Sección 10: Seguridad en Jenkins
 
 ### inicial
 >- jenkins.io

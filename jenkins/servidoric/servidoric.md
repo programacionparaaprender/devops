@@ -21,6 +21,7 @@
 >- http://localhost:2530/manage/pluginManager/installed
 >- http://localhost:2530/securityRealm/addUser
 >- http://localhost:2530/view/all/builds
+>- C:\ProgramData\Jenkins\.jenkins\workspace
 >- sudo apt-get install openssh-server
 >- sudo apt-get install net-tools
 >- ip a
