@@ -14,6 +14,7 @@ https://www.udemy.com/course/la-guia-de-jenkins-de-cero-a-experto/
 >- http://localhost:2530/configureSecurity/
 >- http://localhost:2530/computer/
 >- http://localhost:2530/configure
+>- http://localhost:2530/configureTools
 >- http://localhost:2530/env-vars.html/
 >- http://localhost:2530/updateCenter/
 >- http://localhost:2530/manage/pluginManager/installed
@@ -255,18 +256,98 @@ java -jar "C:\ProgramData\Jenkins\.jenkins\workspace\Java App con Maven\target\m
 ## Sección 9: Aplicación Node.js
 
 ### 47. ¿Qué es Node.js?
+1. Es un entorno de ejecución multiplataforma y de fuente libre para ejecutar código javascript fuera de un navegador web.
+2. Para construír servicios back.end, también llamados API.
+3. Es una librería y entorno de ejecución de E/S dirigida por eventos y por lo tanto asíncrona que se ejecuta sobre el intérprete de javascript creado por Google V8.
+4. Es muy popular y utlizado a lo largo del munto.
+5. Es excelente para la creación de proyectos y desarrollo ágil, como también para construír servicios rápidamente y muy escalables.
+6. Es fácil de entender para principiantes y no necesita ser compilado.
+
+#### ¿Cómo haremos nuestra app de Node.js?
+1. Instalar dependencias
+2. Ejecutar tests
+3. Empaquetar la app con Docker
+4. Distribuír la imagen de Docker
 
 ### 48. Aclaración próxima clase
 
 ### 49. Los archivos que forman la App
+>- https://github.com/programacionparaaprender/nodejsapp.git
+>- http://localhost:2530/manage/pluginManager/available
+>- NodeJS
 
 ### 50. Construyendo la Node.js App en Jenkins
+>- https://github.com/programacionparaaprender/nodejsapp.git
 
 ### 51. Aclaración para realizar próxima clase
 
 ### 52. Empaquetar la App con Docker
+>- Plugin CloudBees Docker Build and Publish
+>- https://hub.docker.com/
+>- docker pull luis13711/nodejsapp
+>- docker run -p 3000:3000 -d --name nodejsapp luis13711/nodejsapp
+>- ac2c7b383d4b67947b6c530ae4784c52179f7f9b5091d0418244c0e98f7cca0b
+>- curl localhost:3000
 
 ## Sección 10: Seguridad en Jenkins
+
+### 53. Buenos hábitos
+>- Convervar a jenkins protegido de la internet
+>- Requerimiento de agregar a la whitelist a las direcciones IP de Bitbucker/Github para poder realizar los push request
+
+1. Establecer la autenticación y autorizaciones.
+2. Utilizar un directorio de usuarios más avanzado como LDAP o SAML.
+3. Utilizar claves de acceso complejas.
+4. Tenes a jenkins siempre con las nuevas actualizaciones.
+5. Usar la versión LTD en lo posible
+6. En caso que uses Docker, usar la LTS o "Latest Tag"
+7. Es de vital importancia leer el changelog (registro de cambios)
+8. Mantener los plugins siempre actualizados
+
+### 54. Autenticación en Jenkins
+>- nano config.xml
+>- quitar <authorizationStrategy>true</authorizationStrategy>
+>- luego volverla a habilitar
+>- SAML (Security Assertion Markup Language)
+>- Onelogin no es un servicio gratis
+
+### 55. Seguridad (Autenticación y Autorización)
+
+#### Autenticación
+>- Es la acción de verificar la identidad de un usuario o proceso.
+
+#### Autorización
+>- Es la función de especificar los derechos de acceso a los recursos relacionados con la seguridad de la información en general y al control de acceso en particular.
+
+
+### 56. Registro de usuario en Jenkins
+
+
+### 57. Accesos restringidos
+>- http://localhost:2530/manage/pluginManager/available
+>- Role-based Authorization Strategy
+>- http://localhost:2530/configureSecurity/
+>- Autorización
+>- Role-Based Strategy
+
+### 58. Rol de lectura para los usuarios
+
+
+### 59. Rol de ejecución para los usuarios
+
+
+### 60. ¿Cómo limitar el acceso a ciertos Jobs?
+
+
+### 61. Integración de Jenkins con Onelogin (SAML)
+>- https://www.onelogin.com/
+>- https://temp-mail.org/es/
+
+## Sección 11: Automatizar la infraestructura como código
+
+### 62.  
+
+
 
 ### inicial
 >- jenkins.io

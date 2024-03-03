@@ -16,11 +16,13 @@
 >- http://localhost:2530/configureSecurity/
 >- http://localhost:2530/computer/
 >- http://localhost:2530/configure
+>- http://localhost:2530/configureTools
 >- http://localhost:2530/env-vars.html/
 >- http://localhost:2530/updateCenter/
 >- http://localhost:2530/manage/pluginManager/installed
 >- http://localhost:2530/securityRealm/addUser
 >- http://localhost:2530/view/all/builds
+>- http://localhost:2530/scriptApproval/
 >- C:\ProgramData\Jenkins\.jenkins\workspace
 >- sudo apt-get install openssh-server
 >- sudo apt-get install net-tools
