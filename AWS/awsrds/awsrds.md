@@ -24,4 +24,20 @@
 
 ## Sección 3: AWS - Creando nuestra Base de datos Gratuita
 
-### 4. 
+### 4. Eligiendo y configurando Engine Options
+
+### 5. Templates & Settings
+
+### 6. DB Instance Size & Availavility & Durability
+
+### 7. Connectivity & Security Groups
+
+### 8. Database Authentication y grabando finalmente nuestra base
+
+### 9. Manejo de panel de RDS completo
+
+### 10. Conectamos remotamente nuestra nueva BD desde HeidiSQL
+
+## Sección 4: Clase Extra
+
+### 11. Clase Extra
