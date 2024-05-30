@@ -21,6 +21,9 @@
 >- Elija Interfaz de línea de comando (CLI) y luego elija Siguiente.
 >- Elija Crear clave de acceso.
 >- Elija Descargar archivo .csv.
+>- chocolatey install -y eksctl
+>- eksctl version
+>- choco install kubernetes-helm
 
 ### 3. 2.2 eksctl EKS
 
