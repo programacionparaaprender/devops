@@ -152,6 +152,43 @@
 
 ## Sección 8: Cognito Identity Pools
 
+### 43. Introducción
+
+#### Identity Pools o grupos de identidades:
+>- Creación de los grupos de identidades o Identity Pools.
+>- Nos permite obtener credenciales temporales de acceso a los servicios de AWS, tanto de usuarios autenticados, como no autenticados (opción configurable).
+>- Permite incluir a los usuarios creados mediante User Pools, así cómo especificar sus roles (y permisos) para acceder a los diferentes servicios de AWS, mediante la definición de roles con IAM (Identity and Access Management). Podemos configurar diferentes roles o permisos para distintos grupos de usuarios definidos mediante UserPool.
+
+### 44. Conceptos teóricos
+
+### 45. Oermisos y roles
+>- https://docs.aws.amazon.com/es_es/cognito/latest/developerguide/iam-roles.html
+
+
+### 46. Atributos para el control de acceso
+
+### 47. Configuración - Recorrido 1 - Roles y políticas
+
+### 48. Configuración - Recorrido 2 - Ajustar Roles
+>- https://us-east-2.console.aws.amazon.com/cognito/v2/identity/identity-pools/create?region=us-east-2
+
+
+### 49. Configuración - Recorrido 3 - Atributos para el control de acceso
+>- https://docs.aws.amazon.com/es_es/cognito/latest/developerguide/what-is-amazon-cognito.html
+
+
+### 50. Configuración - Recorrido 4 - Flujos de autenticación
+
+### 51. Resumen opciones
+
+### 52. Eliminar recursos
+
+## Sección 9: Configurar Cognito con SES y SNS
+
+### 53. 
+
+
+
 
 
 
