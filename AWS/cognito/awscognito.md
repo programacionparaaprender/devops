@@ -178,6 +178,8 @@
 
 
 ### 50. Configuración - Recorrido 4 - Flujos de autenticación
+>- https://docs.aws.amazon.com/es_es/cognito/latest/developerguide/authentication-flow.html
+
 
 ### 51. Resumen opciones
 
