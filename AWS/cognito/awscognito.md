@@ -187,7 +187,29 @@
 
 ## Sección 9: Configurar Cognito con SES y SNS
 
-### 53. 
+### 53. Introducción
+
+### 54. Configurar Simple Notificación Service (SNS) para envio SMS
+>- https://aws.amazon.com/es/sns/
+>- https://repost.aws/es/knowledge-center/sns-sms-spending-limit-increase
+>- https://docs.aws.amazon.com/es_es/sns/latest/dg/channels-sms-awssupport-spend-threshold.html
+
+### 55. SNS envio directo correo soporte amplicación límite SMS
+
+### 56. Clase previa servicio SES - Aviso efecto desenfoque
+
+### 57. Configurar Simple Email Service (SES) para envio emails
+
+### 58. SES Ejemplo paso a producción desde Sandbox
+
+### 59. Documentación adicional SNS y SES
+
+## Sección 10: Probando Cognito con Postman
+
+### 60. 
+
+
+
 
 
 
